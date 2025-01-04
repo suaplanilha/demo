@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Controle de Alunos</title>
+</head>
+<body>
+  <!-- Botão para abrir o conteúdo em uma nova aba -->
+  <button onclick="openInNewTab()">Abrir Conteúdo em Nova Aba</button>
+  
+  <!-- Botão para ativar o modo de tela cheia -->
+  <button onclick="goFullscreen()">Ativar Tela Cheia</button>
+  
+  <script>
+    // Função para abrir o conteúdo em uma nova aba
+    function openInNewTab() {
+      window.open('https://script.google.com/macros/s/AKfycbxyUDcIZmYMyk-Jx5tMbMJdbleh0Ujw5LKt0ii-lKBmKa3zPp1Rtm8xic4MmgwxfYdJ/exec', '_blank');
+    }
+
+    // Função para ativar o modo de tela cheia
+    function goFullscreen() {
+      var iframe = document.querySelector('iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      } else {
+        console.error("Tela cheia não suportada no seu navegador.");
+      }
+    }
+  </script>
+</body>
+</html>
