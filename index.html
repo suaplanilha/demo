@@ -10,14 +10,15 @@
   <div id="content">Carregando...</div>
 
   <script>
-    fetch('https://script.google.com/macros/s/AKfycbxd1j7vtgwOAwPxhuxBhf5WLfr-QL_nlF6JDGYNjTMQeSWki_MLOt3Wg1WsBYfVV4eT/exec')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('content').innerText = data;
-      })
-      .catch(error => {
-        console.error('Erro ao carregar o conteúdo:', error);
-      });
+    fetch('https://script.google.com/macros/s/AKfycbxd1j7vtgwOAwPxhuxBhf5WLfr-QL_nlF6JDGYNjTMQeSWki_MLOt3Wg1WsBYfVV4eT/exec', {
+    mode: 'no-cors'
+})
+.then(response => {
+    console.log('Request sent');
+})
+.catch(error => {
+    console.error('Erro ao carregar:', error);
+});
   </script>
 </body>
 </html>
